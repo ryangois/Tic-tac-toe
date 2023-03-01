@@ -113,4 +113,5 @@ function endGame(win) {
     } else {
         message.textContent = "It's a tie!";
     }
+      message.scrollIntoView()
 }
