@@ -76,6 +76,8 @@ function handleResetButtonClick() {
         cell.textContent = "";
         cell.style.backgroundColor = "";
     });
+    const boardGame = document.getElementById("board");
+    boardGame.scrollIntoView();
     message.textContent = "";
 }
 
