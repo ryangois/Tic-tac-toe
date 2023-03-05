@@ -94,6 +94,7 @@ h1 {
     font-size: 2em;
     padding-top: 2rem;
     color: var(--message);
+    text-align: center;
 }
 
 .x-symbol {

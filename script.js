@@ -42,7 +42,7 @@ function handleCellClick(event) {
 
     // Mark cell with current player's symbol
     board[index] = currentPlayer;
-    
+
     // Create element with player's symbol and apply styling
     const symbol = document.createElement("span");
     symbol.textContent = currentPlayer;
@@ -110,5 +110,5 @@ function endGame(win) {
     } else {
         message.textContent = "It's a Tie!";
     }
-      message.scrollIntoView()
+    message.scrollIntoView()
 }
