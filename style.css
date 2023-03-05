@@ -1,63 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background: #1A120B;
+    --title-color: #d39d68;
+    --cell-background: #d39d68;
+    --cell-background-hover: #d47e28;
+    --cell-border: #3C2A21;
+    --x-color: #E5E5CB;
+    --o-color: #E5E5CB;
+    --message: #f1a457;
+    --button: #d39d68;
+    --button-hover: #d47e28;
+
+    --text-font: 'Roboto', sans-serif;
+    --players-font: 'Prompt', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  h1{ 
+    background-color: var(--background);
+}
+
+h1 {
     text-align: center;
-    padding-bottom:2rem;
-    font-size:3.5rem;
-  }
-  #board{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-  }
-  
-  
-  .cell {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 100px;
-      font-size: 3rem;
-      font-weight: bold;
-      border: 2px solid black;
-      cursor: pointer;
-      transition: all 0.3s ease;
-  }
-  
-  .cell:hover {
-      background-color: #eee;
-  }
-  
-  /* #turn {
-      margin-top: 1rem;
-      font-size: 2rem;
-  } */
-  
-  #reset {
-      margin: 0 auto;
-  
-          margin-top: 2rem;
-      font-size: 2rem;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-  }
-  
-  #reset:hover {
-      background-color: #3e8e41;
-  }
-  
-  #message {
+    font-size: 3.5rem;
+    margin: 1rem 0 1.2rem;
+    color: var(--title-color);
+    font-family: var(--text-font);
+    font-weight: 700;
+
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    font-weight: bold;
+    border: 2px solid var(--cell-border);
+    background-color: var(--cell-background);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background-color: var(--cell-background-hover);
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20%;
+}
+
+#reset {
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    color: #3C2A21;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#reset:hover {
+    background-color: var(--button-hover);
+}
+
+#message {
     font-size: 2em;
-    padding-top: 4rem;
-  }
+    padding-top: 2rem;
+    color: var(--message);
+}
+
+.x-symbol {
+    color: var(--x-color);
+    font-family: var(--players-font);
+    font-weight: 500;
+}
+
+.o-symbol {
+    color: var(--o-color);
+    font-family: var(--players-font);
+    font-weight: 500;
+}
