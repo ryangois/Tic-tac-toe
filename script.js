@@ -1,21 +1,10 @@
 // Define X and O symbols and winning sequences
-let X_SYMBOL = "❌";
-let O_SYMBOL = "⭕️";
-// let X_SYMBOL = "X";
-// let O_SYMBOL = "O";
+let X_SYMBOL = "X";
+let O_SYMBOL = "O";
 
-const xImage = new Image();
-const oImage = new Image();
-xImage.src = "path/to/oImage.png";
-oImage.src = "path/to/oImage.png";
-
-// Once the images are loaded, set the X and O symbols to use the images
-xImage.onload = function () {
-    X_SYMBOL = xImage;
-};
-oImage.onload = function () {
-    O_SYMBOL = oImage;
-};
+//Define CSS classes for X and O symbols
+const X_CLASS = "x-symbol";
+const O_CLASS = "o-symbol";
 
 const WINNING_SEQUENCES = [
     [0, 1, 2],
@@ -53,7 +42,12 @@ function handleCellClick(event) {
 
     // Mark cell with current player's symbol
     board[index] = currentPlayer;
-    cell.textContent = currentPlayer;
+    
+    // Create element with player's symbol and apply styling
+    const symbol = document.createElement("span");
+    symbol.textContent = currentPlayer;
+    symbol.classList.add(currentPlayer === X_SYMBOL ? X_CLASS : O_CLASS);
+    cell.appendChild(symbol);
 
     // Check for result
     const win = checkForWin();
@@ -87,9 +81,10 @@ function checkForWin() {
         const [a, b, c] = sequence;
         if (board[a] !== "" && board[a] === board[b] && board[b] === board[c]) {
             // Highlight winning sequence
-            cells[a].style.backgroundColor = "yellow";
-            cells[b].style.backgroundColor = "yellow";
-            cells[c].style.backgroundColor = "yellow";
+            const winningSequence = "#d47e28"
+            cells[a].style.backgroundColor = winningSequence;
+            cells[b].style.backgroundColor = winningSequence;
+            cells[c].style.backgroundColor = winningSequence;
 
             return true;
         }
@@ -111,9 +106,9 @@ function checkForTie() {
 function endGame(win) {
     gameEnded = true;
     if (win) {
-        message.textContent = `Congratulations! ${currentPlayer} wins!`;
+        message.textContent = `Congratulations! ${currentPlayer} Wins!`;
     } else {
-        message.textContent = "It's a tie!";
+        message.textContent = "It's a Tie!";
     }
       message.scrollIntoView()
 }
